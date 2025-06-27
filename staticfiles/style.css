@@ -1,0 +1,14 @@
+body{
+    background-image: url("./background.png");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.shift-text
+{
+    padding-left: 20cm;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+

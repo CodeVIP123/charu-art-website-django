@@ -33,9 +33,9 @@ if dot_env_path.exists():
 SECRET_KEY = Fernet(key).decrypt(os.environ.get("DJANGO_KEY_FOR_CHARU_ART_WEBSITE").encode("utf-8")).decode('utf-8')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['charucanvasartwebsite.onrender.com', 'charucanvasartwebsite.com', 'www.charucanvasartwebsite.com']
 
 
 # Application definition
@@ -53,6 +53,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # Add this line
+    # ... other middleware
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -134,8 +136,13 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles' # This is where collectstatic will gather files
+
+# Optional: Add this for WhiteNoise to handle static files from apps
 STATICFILES_DIRS = [
-    BASE_DIR / "static"
+    BASE_DIR / 'static', # If you have a 'static' folder at your project root
 ]
 
 EMAIL_HOST_USER = Fernet(key).decrypt(os.environ.get("SENDER_EMAIL_FOR_SMTPLIB").encode("utf-8")).decode('utf-8')

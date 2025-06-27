@@ -71,15 +71,15 @@
     <!-- Social Media (Open Graph for Facebook, LinkedIn, etc.) -->
     <meta property="og:title" content="Best Art Classes by Charu Kesarwani now available everywhere, Join Now!">
     <meta property="og:description" content="India’s finest art classes for kids and adults – painting, sketching, and more!">
-    <meta property="og:image" content="{{ STATIC_URL }}images/art-banner.jpg">
+    <meta property="og:image" content="{% static "art-banner.jpeg" %}">
     <meta property="og:url" content="https://art.drawcreationsx.com">
     <meta property="og:type" content="website">
   
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Best Art Classes by DrawCreationsX">
+    <meta name="twitter:title" content="Best Art Classes by Charu Canvas Art Classes">
     <meta name="twitter:description" content="Learn art from professionals. Enroll now!">
-    <meta name="twitter:image" content="{{ STATIC_URL }}images/art-banner.jpg">
+    <meta name="twitter:image" content="{% static "art-banner.jpeg" %}">
 </head>
 
 <body>
@@ -93,7 +93,10 @@
   {% endif %}
   <nav class="navbar navbar-expand-lg">
     <div class="container my-2" style="margin-left: 5cm;">
-      <a class="navbar-brand" href="/"><i><b>Charu's Canvas Art Classes</b></i></a>
+      <a class="navbar-brand" href="/">
+        <img src="{% static 'art-banner.jpeg' %}" alt="Logo" style="border-radius: 300px; width: 100px; height: 100px; margin-right: 10px;">
+        <i><b>Charu's Canvas Art Classes</b></i>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
