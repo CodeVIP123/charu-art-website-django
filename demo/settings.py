@@ -16,12 +16,12 @@ from cryptography.fernet import Fernet
 import os
 from dotenv import load_dotenv
 
-with open("/media/sarvaang/6644513F445112E3/Demo website/demo/demo/key.key", "rb") as key_file:
-    key = key_file.read()
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 dot_env_path = BASE_DIR / ".env"
+
+with open(BASE_DIR / "key.key", "rb") as key_file:
+    key = key_file.read()
 
 if dot_env_path.exists():
     load_dotenv(os.path.join(BASE_DIR, ".env"))

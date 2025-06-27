@@ -1,6 +1,5 @@
 from django.shortcuts import render
 import os
-from .models import Contact
 import demo.settings as settings
 import smtplib
 from django.contrib import messages
@@ -65,11 +64,6 @@ def contact(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         message = request.POST.get('message')
-
-        # Save the contact message to the database
-        contact_message = Contact(name=name, email=email, message=message)
-        contact_message.save()
-
         # Send an email notification
         subject = "New Contact Message"
         body = f"Subject: {subject}\n----------------------\n\nName: {name}\nEmail: {email}\nDoubt: {message}"
