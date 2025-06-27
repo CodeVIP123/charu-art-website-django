@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home page
+{% endblock title %}
+
+{% block content %}
+<div class="my-4 text-center">
+    <h1>Featured Works</h1>
+</div>
+<div class="row text-center my-3" style="margin-left: 180px; gap: 5px; display: flex; flex-wrap: nowrap;">
+    <div class="col-md-3 mb-3">
+        <div class="card" style="width: 18rem; border: 2px solid rgba(255, 165, 0, 0.5);">
+            <img src="{% load static %} {% static "featured_portrait_study.jpeg" %}" class="card-img-top"
+                alt="Pencil Shading">
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card" style="width: 18rem; border: 2px solid rgba(255, 165, 0, 0.5);">
+            <img src="{% load static %}{% static 'featured_Oil_Pastel.jpeg' %}" class="card-img-top" alt="Charcoal">
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card" style="width: 18rem; border: 2px solid rgba(255, 165, 0, 0.5);">
+            <img src="{% load static %}{% static 'featured_mandala.jpeg' %}" class="card-img-top"
+                alt="Pencil Shading">
+        </div>
+    </div>
+</div>
+<div class="text-center my-4">
+    <b>Welcome to Charu’s Canvas Art Classes, nurturing creativity since 2015. We proudly teach art to all age groups,
+        from young beginners to passionate adults.
+        <br>
+        <br>
+        Our mission is not just to teach—but to empower. Many of our students, especially homemakers, have gone on to
+        start their own art classes after learning with us.
+        <br>
+        <br>
+        We provide platforms to showcase talent through reputed art exhibitions, helping students build confidence and
+        gain recognition.
+        <br>
+        <br>
+        With 1000+ students from 10+ countries across the globe, we offer both online and offline classes, making
+        learning art accessible to all.
+        <br>
+        <br>
+        Along with regular courses, we also conduct various creative workshops throughout the year, ensuring continuous
+        learning and fun.
+        <br>
+        <br>
+        Join us and start your artistic journey today! </b>
+</div>
+<div class="text-center" style="margin-top: 50px;">
+    <u><h1 style="animation: colorChange 3s infinite;">Our Speciality</h1></u>
+</div>
+<style>
+@keyframes colorChange {
+    0% {
+        color: rgb(255, 0, 0); /* Red */
+    }
+    50% {
+        color: rgb(128, 0, 128); /* Purple */
+    }
+    75% {
+        color: rgb(0, 255, 0); /* Green */
+    }
+    100% {
+        color: rgb(255, 0, 0); /* Red */
+    }
+}
+</style>
+<div class="container text-center" style="margin-top: 30px;">
+    <div class="row align-items-center mb-4">
+        <div class="col-md-6">
+            <h2>Learn At Your Own Pace</h2>
+            <p><b>"Progress comfortably at your pace, independent of others’ speed."</b></p>
+        </div>
+        <div class="col-md-6">
+            <img src="{% load static %}{% static 'home_features_1.png' %}" alt="Learn at your own pace" style="width: 200px; height: auto; border-radius: 300px; object-fit: contain;">
+        </div>
+    </div>
+    <div class="row align-items-center mb-4">
+        <div class="col-md-6">
+            <h2>Flexible Timings</h2>
+            <p><b>Select the timing that works best for you. (Dedicated batches for International students)</b></p>
+        </div>
+        <div class="col-md-6">
+            <img src="{% load static %}{% static 'home_featured_2.png' %}" alt="Flexible Timings" style="width: 200px; height: auto; border-radius: 300px; object-fit: contain;">
+        </div>
+    </div>
+    <div class="row align-items-center mb-4">
+        <div class="col-md-6">
+            <h2>Interactive Sessions</h2>
+            <p><b>Ask questions freely—during live sessions and beyond.</b></p>
+        </div>
+        <div class="col-md-6">
+            <img src="{% load static %}{% static 'home_featured_3.png' %}" alt="Interactive Sessions" style="width: 200px; height: auto; border-radius: 300px; object-fit: contain;">
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h2>Get Featured</h2>
+            <p><b>Exhibition Opportunities to Display Your Creativity in reputed Galleries.</b></p>
+        </div>
+        <div class="col-md-6">
+            <img src="{% load static %}{% static 'home_featured_4.jpeg' %}" alt="Get Featured" style="width: 200px; height: 290px; border-radius: 800px; object-fit: contain;">
+        </div>
+    </div>
+</div>
+<div class="container mt-5 shift-text" style="padding-right: 10cm;">
+    <div style="display: flex; align-items: center; gap: 20px; flex-direction: row-reverse;">
+        <div>
+            <h1 style="white-space: nowrap;">Our Art Gallery</h1>
+            <b>See some works of our students on <a href="gallary"><b>this page!</b></a></b>
+        </div>
+        <img src="{% load static %}{% static 'Acrylic/WhatsApp Image 2025-06-10 at 09.07.40.jpeg' %}" alt=""
+            style="width: 230px; height: 230px; border-radius: 300px; margin-right: 50px; margin-left: 0;">
+    </div>
+</div>
+<div class="container mt-5" style="padding-left: 10cm;">
+    <div style="display: flex; align-items: center; gap: 20px;">
+        <img src="{% load static %}{% static 'home_contact.jpeg' %}" alt=""
+            style="width: 250px; height: 250px; border-radius: 300px;">
+        <div>
+            <h1>Want Any help?</h1>
+            <p>Well then, <a href="/contact">Contact Us!</a></p>
+        </div>
+    </div>
+</div>
+<div class="container mt-5 shift-text" style="padding-right: 10cm;">
+    <div style="display: flex; align-items: center; gap: 20px; flex-direction: row-reverse;">
+        <div>
+            <h1 style="white-space: nowrap;">Want to Join Us?</h1>
+            <b>Well then, <a href="register"><b>register on this page!</b></a></b>
+        </div>
+        <img src="{% load static %}{% static 'home_join_us.jpg' %}" alt=""
+            style="width: 230px; height: 230px; border-radius: 300px; margin-right: 50px; margin-left: 0;">
+    </div>
+</div>
+<hr style="border: 1px solid red; margin: 40px 0;">
+{% endblock content %}

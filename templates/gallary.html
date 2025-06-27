@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+
+{% block title %}
+Our Art Gallery
+{% endblock title %}
+
+{% block content %}
+
+<div class="container my-2" style="padding: 20px; border-radius: 10px;">
+    <div class="my-2" style="text-align: center;">
+        <h1 class="text-center" style="display: inline-block; background-color: rgb(74, 161, 142); padding: 5px; margin: 0 auto;"><i><b>Art Gallery</b></i></h1>
+    </div>
+    <p class="text-center">Welcome to our art gallery! Here you can explore the creative works of our talented students. Enjoy the beauty and diversity of their artistic expressions.</p>
+    <h3 class="text-center fw-bold" style="font-size: 1.8rem; color: rgb(44, 62, 80); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); margin-top: 20px;">
+        Discover the artistry and creativity of our talented minds and our teachers.
+    </h3>
+</div>
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+<h1 class="text-center"><u style="color: red;">Artist's Work</u></h1>
+
+<div class="container">
+    {% for file in Artist %}
+    {% if forloop.counter0|divisibleby:3 %}
+    <div class="row justify-content-center">
+    {% endif %}
+        <div class="col-md-4 my-3">
+            <div class="card mx-auto" style="max-width: 400px; max-height: 400px; border-radius: 10px;">
+                <img src="{% load static %}{% static file %}" class="card-img-top img-fluid" style="height: 400px; width: 400px; object-fit: cover; border-radius: 10px;" alt="...">
+            </div>
+        </div>
+    {% if forloop.counter|divisibleby:3 or forloop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+<h1 class="text-center"><u style="color: red;">Students' Works</u></h1>
+<h2 class="text-center"><u style="color: blue;">Acrylic Colours</u></h2>
+
+<div class="container">
+    {% for file in Acrylic %}
+    {% if forloop.counter0|divisibleby:3 %}
+    <div class="row justify-content-center">
+    {% endif %}
+        <div class="col-md-4 my-3">
+            <div class="card mx-auto" style="max-width: 400px; max-height: 400px; border-radius: 10px;">
+                <img src="{% load static %}{% static file %}" class="card-img-top img-fluid" style="height: 400px; width: 400px; object-fit: cover; border-radius: 10px;" alt="...">
+            </div>
+        </div>
+    {% if forloop.counter|divisibleby:3 or forloop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+<h2 class="text-center my-3"><u style="color: blue;">Pencil Sketching</u></h2>
+
+<div class="container">
+    {% for file in Pencil_Colouring %}
+    {% if forloop.counter0|divisibleby:3 %}
+    <div class="row justify-content-center">
+    {% endif %}
+        <div class="col-md-4 my-3">
+            <div class="card mx-auto" style="max-width: 400px; max-height: 400px; border-radius: 10px;">
+                <img src="{% load static %}{% static file %}" class="card-img-top img-fluid" style="height: 400px; width: 400px; object-fit: cover; border-radius: 10px;" alt="...">
+            </div>
+        </div>
+    {% if forloop.counter|divisibleby:3 or forloop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+<h2 class="text-center my-3"><u style="color: blue;">Charcoal</u></h2>
+
+<div class="container">
+    {% for file in Charcoal %}
+    {% if forloop.counter0|divisibleby:3 %}
+    <div class="row justify-content-center">
+    {% endif %}
+        <div class="col-md-4 my-3">
+            <div class="card mx-auto" style="width: max-400px; max-height: 400px; border-radius: 10px;">
+                <img src="{% load static %}{% static file %}" class="card-img-top img-fluid" style="height: 400px; width: 400px; object-fit: cover; border-radius: 10px;" alt="...">
+            </div>
+        </div>
+    {% if forloop.counter|divisibleby:3 or forloop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+<h2 class="text-center my-3"><u style="color: blue;">Mandala</u></h2>
+
+<div class="container">
+    {% for file in Mandala %}
+    {% if forloop.counter0|divisibleby:3 %}
+    <div class="row justify-content-center">
+    {% endif %}
+        <div class="col-md-4 my-3">
+            <div class="card mx-auto" style="max-width: 400px; max-height: 400px; border-radius: 10px;">
+                <img src="{% load static %}{% static file %}" class="card-img-top img-fluid" style="height: 400px; width: 400px; object-fit: cover; border-radius: 10px;" alt="...">
+            </div>
+        </div>
+    {% if forloop.counter|divisibleby:3 or forloop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+<h2 class="text-center my-3"><u style="color: blue;">Oil Pastel</u></h2>
+
+<div class="container">
+    {% for file in Oil_Pastel %}
+    {% if forloop.counter0|divisibleby:3 %}
+    <div class="row justify-content-center">
+    {% endif %}
+        <div class="col-md-4 my-3">
+            <div class="card mx-auto" style="max-width: 400px; max-height: 400px; border-radius: 10px;">
+                <img src="{% load static %}{% static file %}" class="card-img-top img-fluid" style="height: 400px; width: 400px; object-fit: cover; border-radius: 10px;" alt="...">
+            </div>
+        </div>
+    {% if forloop.counter|divisibleby:3 or forloop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+<h2 class="text-center my-3"><u style="color: blue;">Pencil Shading</u></h2>
+
+<div class="container">
+    {% for file in Pencil_Shading %}
+    {% if forloop.counter0|divisibleby:3 %}
+    <div class="row justify-content-center">
+    {% endif %}
+        <div class="col-md-4 my-3">
+            <div class="card mx-auto" style="max-width: 400px; max-height: 400px; border-radius: 10px;">
+                <img src="{% load static %}{% static file %}" class="card-img-top img-fluid" style="height: 400px; width: 400px; object-fit: cover; border-radius: 10px;" alt="...">
+            </div>
+        </div>
+    {% if forloop.counter|divisibleby:3 or forloop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+<h2 class="text-center my-3"><u style="color: blue;">Soft Pastels</u></h2>
+
+<div class="container">
+    {% for file in Soft_Pastel %}
+    {% if forloop.counter0|divisibleby:3 %}
+    <div class="row justify-content-center">
+    {% endif %}
+        <div class="col-md-4 my-3">
+            <div class="card mx-auto" style="max-width: 400px; max-height: 400px; border-radius: 10px;">
+                <img src="{% load static %}{% static file %}" class="card-img-top img-fluid" style="height: 400px; width: 400px; object-fit: cover; border-radius: 10px;" alt="...">
+            </div>
+        </div>
+    {% if forloop.counter|divisibleby:3 or forloop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+<h2 class="text-center my-3"><u style="color: blue;">Poster Colours</u></h2>
+
+<div class="container">
+    {% for file in Poster_Colours %}
+    {% if forloop.counter0|divisibleby:3 %}
+    <div class="row justify-content-center">
+    {% endif %}
+        <div class="col-md-4 my-3">
+            <div class="card mx-auto" style="max-width: 400px; max-height: 400px; border-radius: 10px;">
+                <img src="{% load static %}{% static file %}" class="card-img-top img-fluid" style="height: 400px; width: 400px; object-fit: cover; border-radius: 10px;" alt="...">
+            </div>
+        </div>
+    {% if forloop.counter|divisibleby:3 or forloop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+<h2 class="text-center my-3"><u style="color: blue;">Portrait Study</u></h2>
+
+<div class="container">
+    {% for file in Portrait_Study %}
+    {% if forloop.counter0|divisibleby:3 %}
+    <div class="row justify-content-center">
+    {% endif %}
+        <div class="col-md-4 my-3">
+            <div class="card mx-auto" style="max-width: 400px; max-height: 400px; border-radius: 10px;">
+                <img src="{% load static %}{% static file %}" class="card-img-top img-fluid" style="height: 400px; width: 400px; object-fit: cover; border-radius: 10px;" alt="...">
+            </div>
+        </div>
+    {% if forloop.counter|divisibleby:3 or forloop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+<h2 class="text-center my-3"><u style="color: blue;">Water Colours</u></h2>
+
+<div class="container">
+    {% for file in Water_Colour %}
+    {% if forloop.counter0|divisibleby:3 %}
+    <div class="row justify-content-center">
+    {% endif %}
+        <div class="col-md-4 my-3">
+            <div class="card mx-auto" style="max-width: 400px; max-height: 400px; border-radius: 10px;">
+                <img src="{% load static %}{% static file %}" class="card-img-top img-fluid" style="height: 400px; width: 400px; object-fit: cover; border-radius: 10px;" alt="...">
+            </div>
+        </div>
+    {% if forloop.counter|divisibleby:3 or forloop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<hr style="border: 1px solid #ccc; margin: 40px 0;">
+{% endblock %}
+
+

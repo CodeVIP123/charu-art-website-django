@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}
+About Teacher
+{% endblock title %}
+
+{% block content %}
+<h1 class="container mt-5" style="margin-top: 100px;">
+    About The Teacher
+</h1>
+<div class="container mt-5 my-3 d-flex align-items-center">
+    <div style="flex: 1;">
+        <h2>Background</h2>
+        <b>Charu’s Canvas Art Classes began in 2015 with just a handful of students. Today, it has grown into a global community, reaching 10+ countries and benefiting 1,000+ students through both online and offline learning modes.
+            <br>
+            <br>
+            Here, we don’t just teach art—we help you discover your creativity, build confidence, and create a joyful, fulfilling space beyond the noise of the digital era.
+            <br>
+            <br>
+            Founder Charu Keserwani, originally from a technology background with an MCA, found her true passion in the world of art. To sharpen her skills, she completed her BFA, which helped her develop a unique and effective teaching style. Charu makes learning art approachable, breaking down even complex concepts into easy steps.
+            <br>
+            <br>
+            With immense patience and personal attention, Charu ensures that every student progresses at their own pace, whether they are beginners or advanced learners.
+            <br>
+            <br>
+            A strong focus of Charu’s journey has been to empower homemakers who lost touch with their passions in the busyness of life. Many of Charu’s students have now started their own art classes, carrying forward the creative spark.</b>
+    </div>
+    <div style="flex: 1; text-align: center;">
+        <img src="{% load static %} {% static "charu_image.jpeg" %}" alt="Teacher Image" style="width: 600px; height: 600px; border-radius: 300px;">
+    </div>
+</div>
+<div class="container mt-5 my-3">
+    <div class="row">
+        {% for image in images %}
+        <div class="col-md-4 my-3 d-flex justify-content-center">
+            <img src="{% static "About_Us/" %}{{ image }}" alt="Image" style="width: 300px; height: 300px; border-radius: 10px; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="container mt-5" style="padding-bottom: 2cm;">
+    <h1>Our Testimonial</h1>
+    <h3 class="my-2 text-secondary font-italic">
+        <span class="d-block">🎨 Celebrating Creativity</span>
+        <small>Hear from Our Happy Artists their story to success!</small>
+    </h3>
+</div>
+<div class="container" style="position: relative;">
+    <div class="font-italic" style="position: absolute; top: 49%; left: calc(40% - 0.5%); transform: translate(-50%, -50%) rotate(-45deg); font-size: 5rem; color: rgba(0, 0, 0, 0.2); pointer-events: none; white-space: nowrap; z-index: 0;">
+        <p>Charu Canvas Art Classes</p>
+    </div>
+    <div class="row justify-content-center" style="position: relative; z-index: 1;">
+        {% for file in reviews %}
+        <div class="col-md-4 my-3 {% if forloop.counter > 3 %}lift-up{% endif %}">
+            <img src="{% static file %}" class="card-img-top img-fluid" style="max-height: 400px; max-width: 400px; object-fit: contain;" alt="Image for review">
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
+

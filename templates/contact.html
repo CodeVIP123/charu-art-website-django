@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact Us
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Contact Us</h1>
+    <p>If you have any suggestions, feedback, or having any bugs, please feel free to reach out to <b style="color: red;">US</b> using the form below.</p>
+    
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+    <h2 class="text-center">Or, reach us out directly!</h1>
+    <div class="text-center">
+        <p><b style="color: blue;">Phone Number:</b> {{phone_number}}</p>
+        <p style="color: green;"><b>Address: 702, Block 16, Malaysian township Kukatpally, opposite Nexus Mall, Hderabad (Telangna)-500085</b></p>
+        <div class="social-media mt-4 my-3">
+            <h3>Follow Us On</h3>
+            <div class="d-flex justify-content-center mt-3">
+                <a href="https://www.instagram.com/charu.keserwani/" target="_blank" class="mx-3">
+                    <img src="{% load static %}{% static "contact_us_insta.jpeg" %}" alt="Instagram" style="width: 40px; height: 40px;">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100070688926803" target="_blank" class="mx-3">
+                    <img src="{% load static %}{% static "contact-us-fb.png" %}" alt="Facebook" style="width: 40px; height: 40px;">
+                </a>
+                <a href="https://www.linkedin.com/in/charu-keserwani-270077190/" target="_blank" class="mx-3">
+                    <img src="{% load static %}{% static "contact-us-linkedin.png" %}" alt="LinkedIn" style="width: 40px; height: 40px;">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

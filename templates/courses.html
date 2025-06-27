@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block title %}
+Our Courses
+{% endblock title %}
+
+{% block content %}
+<div class="text-center my-5">
+    <h1 class="display-4 font-weight-bold">Our Courses</h1>
+    <h3 class="text-muted my-3">Mode of Learning</h3>
+    <hr class="my-4" style="width: 50%; margin: auto; border-top: 2px solid #007BFF;">
+</div>
+<div class="row text-center container">
+    <div class="col-md-6 d-flex align-items-center justify-content-start mb-5" style="text-align: left; flex-direction: column;">
+        <div style="margin-left: 80px;">
+            <h4 class="mb-3">Online Classes</h4>
+            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=350&h=350&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Online Classes" class="img-fluid mt-3" style="width: 350px; height: 350px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        </div>
+    </div>
+    <div class="col-md-6 d-flex align-items-center justify-content-start mb-5" style="text-align: left; flex-direction: column;">
+        <div style="margin-right: -500px;">
+            <h4 class="mb-3">Offline Classes</h4>
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=350&h=350&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Offline Classes" class="img-fluid mt-3" style="width: 350px; height: 350px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        </div>
+    </div>
+</div>
+
+<div class="text-center my-5">
+    <h3 class="text-muted my-3">What You Learn Here</h3>
+    <hr class="my-4" style="width: 50%; margin: auto; border-top: 2px solid #007BFF;">
+</div>
+{% load static %}
+<div class="container text-center courses">
+    <p class="my-3">We offer a variety of courses including:</p>
+    <div class="row" style="margin-left: 3cm;">
+        <div class="col-md-6 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'pencil_shading_collage.jpg' %}" class="card-img-top" alt="Pencil Shading">
+                <div class="card-body">
+                    <h5 class="card-title">Pencil Shading</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est eos saepe officiis, quibusdam modi eius atque deserunt cum at numquam.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'charcoal_collage.jpg' %}" class="card-img-top" alt="Charcoal">
+                <div class="card-body">
+                    <h5 class="card-title">Charcoal</h5>
+                    <p class="card-text">Master the art of <b style="color: red;">Charcoal</b> and unlock a world of expressive possibilities for your portfolio.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 3cm;">
+        <div class="col-md-6 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'oil_pastel_collage.jpeg' %}" class="card-img-top" alt="Oil Pastel">
+                <div class="card-body">
+                    <h5 class="card-title">Oil Pastel</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est eos saepe officiis, quibusdam modi eius atque deserunt cum at numquam.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'soft_pastel_collage.jpeg' %}" class="card-img-top" alt="Soft Pastel">
+                <div class="card-body">
+                    <h5 class="card-title">Soft Pastel</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est eos saepe officiis, quibusdam modi eius atque deserunt cum at numquam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 3cm;">
+        <div class="col-md-6 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'poster_colour_collage.jpg' %}" class="card-img-top" alt="Poster Colours">
+                <div class="card-body">
+                    <h5 class="card-title">Poster Colours</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est eos saepe officiis, quibusdam modi eius atque deserunt cum at numquam.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'water_colour_collage.jpg' %}" class="card-img-top" alt="Water Colours">
+                <div class="card-body">
+                    <h5 class="card-title">Water Colours</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est eos saepe officiis, quibusdam modi eius atque deserunt cum at numquam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 3cm;">
+        <div class="col-md-6 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'calligraphy_collage.jpg' %}" class="card-img-top" alt="Calligraphy">
+                <div class="card-body">
+                    <h5 class="card-title">Calligraphy</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est eos saepe officiis, quibusdam modi eius atque deserunt cum at numquam.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'mandala_collage.jpg' %}" class="card-img-top" alt="Mandala">
+                <div class="card-body">
+                    <h5 class="card-title">Mandala</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est eos saepe officiis, quibusdam modi eius atque deserunt cum at numquam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 3cm;">
+        <div class="col-md-6 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'acrylic_collage.jpeg' %}" class="card-img-top" alt="Acrylic Painting">
+                <div class="card-body">
+                    <h5 class="card-title">Acrylic Painting</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est eos saepe officiis, quibusdam modi eius atque deserunt cum at numquam.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'oil_painting_collage.jpg' %}" class="card-img-top" alt="Oil Painting">
+                <div class="card-body">
+                    <h5 class="card-title">Oil Painting</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est eos saepe officiis, quibusdam modi eius atque deserunt cum at numquam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-left: 3cm;">
+        <div class="col-md-6 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'portrait_collage.jpg' %}" class="card-img-top" alt="Portrait Study">
+                <div class="card-body">
+                    <h5 class="card-title">Portrait Study</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est eos saepe officiis, quibusdam modi eius atque deserunt cum at numquam.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'pencil_colour_collage.jpeg' %}" class="card-img-top" alt="Pencil Sketching">
+                <div class="card-body">
+                    <h5 class="card-title">Pencil Sketching</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est eos saepe officiis, quibusdam modi eius atque deserunt cum at numquam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <b><i>Wanna join us, well:</i></b>
+    <button type="button" class="btn"><a href="/register" style="color: orange;">Join Now!</a></button>
+</div>
+
+<hr style="border: 1px solid red; margin: 40px 0;">
+</div>
+{% endblock content %}
