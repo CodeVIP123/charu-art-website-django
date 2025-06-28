@@ -150,3 +150,4 @@ EMAIL_HOST_PASSWORD = Fernet(key).decrypt(os.environ.get("SENDER_PASS_FOR_SMTPLI
 RECEIVER_EMAIL = Fernet(key).decrypt(os.environ.get("RECEIVER_EMAIL_FOR_CHARU_ART_WEBSITE").encode("utf-8")).decode('utf-8')
 RECEIVER_EMAIL_FOR_CONTACT_FORM = Fernet(key).decrypt(os.environ.get("RECEIVER_EMAIL_FOR_CONTACT_CHARU_ART_WEBSITE").encode("utf-8")).decode('utf-8')
 TEACHER_CONTACT_NUMBER = Fernet(key).decrypt(os.environ.get("PHONE_NUMBER_CONTACT_CHARU_ART_WEBSITE").encode("utf-8")).decode('utf-8')
+DEFAULT_MAIL = Fernet(key).decrypt(os.environ.get("SENDER_MAIL_FOR_DEFAULT_EMAIL").encode("utf-8")).decode('utf-8')

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import os
 import demo.settings as settings
+from email.mime.text import MIMEText
 import smtplib
 from django.contrib import messages
 from django.template.loader import render_to_string
@@ -66,10 +67,18 @@ def contact(request):
         message = request.POST.get('message')
         # Send an email notification
         subject = "New Contact Message"
-        body = f"Subject: {subject}\n----------------------\n\nName: {name}\nEmail: {email}\nDoubt: {message}"
-        s.sendmail(settings.EMAIL_HOST_USER, settings.RECEIVER_EMAIL_FOR_CONTACT_FORM, body)
-
-        messages.success(request, 'Your message has been sent successfully!')
+        body = MIMEText(f"Name: {name}\nEmail: {email}\nDoubt: {message}")
+        body["Subject"] = subject
+        body["From"] = settings.DEFAULT_MAIL
+        body["To"] = settings.RECEIVER_EMAIL_FOR_CONTACT_FORM
+        try:
+            with smtplib.SMTP('smtp.gmail.com', 587) as s:
+                s.starttls()
+                s.login(settings.EMAIL_HOST_USER, settings.EMAIL_HOST_PASSWORD)
+                s.sendmail(settings.EMAIL_HOST_USER, settings.RECEIVER_EMAIL_FOR_CONTACT_FORM, body.as_string())
+            messages.success(request, 'Your message has been sent successfully!')
+        except Exception as e:
+            messages.error(request, f"Something went wrong: {str(e)}")
 
     context = {"phone_number": settings.TEACHER_CONTACT_NUMBER}
     return render(request, 'contact.html', context=context)
@@ -113,7 +122,7 @@ def register(request):
         mediums = request.POST.getlist('medium')
 
         subject = "New Registration Details"
-        message = f"""
+        message = MIMEText(f"""
         Subject: {subject}
         ---------------
 
@@ -126,9 +135,18 @@ def register(request):
         Preferred Days: {preferred_days}
         Preferred Time: {preferred_time}
         Mediums: {', '.join(mediums)}
-        """
-        s.sendmail(settings.EMAIL_HOST_USER, settings.RECEIVER_EMAIL, message)
-        messages.success(request, 'Your registration has been successfully submitted!')
+        """)
+        message["Subject"] = subject
+        message["From"] = settings.DEFAULT_MAIL
+        message["To"] = settings.RECEIVER_EMAIL_FOR_CONTACT_FORM
+        try:
+            with smtplib.SMTP('smtp.gmail.com', 587) as s:
+                s.starttls()
+                s.login(settings.EMAIL_HOST_USER, settings.EMAIL_HOST_PASSWORD)
+                s.sendmail(settings.EMAIL_HOST_USER, settings.RECEIVER_EMAIL_FOR_CONTACT_FORM, body.as_string())
+            messages.success(request, 'Your message has been sent successfully!')
+        except Exception as e:
+            messages.error(request, f"Something went wrong: {str(e)}")
     return render(request, 'register.html')
 
 def courses(request):
