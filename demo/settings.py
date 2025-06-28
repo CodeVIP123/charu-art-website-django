@@ -145,13 +145,15 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static', # If you have a 'static' folder at your project root
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = Fernet(key).decrypt(os.environ.get("EMAIL_HOST").encode("utf-8")).decode('utf-8')
+EMAIL_PORT = Fernet(key).decrypt(os.environ.get("EMAIL_PORT").encode("utf-8")).decode('utf-8')
+EMAIL_USE_TLS = True
 EMAIL_HOST_USER = Fernet(key).decrypt(os.environ.get("SENDER_EMAIL_FOR_SMTPLIB").encode("utf-8")).decode('utf-8')
 EMAIL_HOST_PASSWORD = Fernet(key).decrypt(os.environ.get("SENDER_PASS_FOR_SMTPLIB").encode("utf-8")).decode('utf-8')
+EMAIL_USE_SSL = False
+DEFAULT_FROM_EMAIL = f"{Fernet(key).decrypt(os.environ.get("DEFAULT_FROM_EMAIL").encode("utf-8")).decode('utf-8')} {EMAIL_HOST_USER}"
+ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
 RECEIVER_EMAIL = Fernet(key).decrypt(os.environ.get("RECEIVER_EMAIL_FOR_CHARU_ART_WEBSITE").encode("utf-8")).decode('utf-8')
 RECEIVER_EMAIL_FOR_CONTACT_FORM = Fernet(key).decrypt(os.environ.get("RECEIVER_EMAIL_FOR_CONTACT_CHARU_ART_WEBSITE").encode("utf-8")).decode('utf-8')
 TEACHER_CONTACT_NUMBER = Fernet(key).decrypt(os.environ.get("PHONE_NUMBER_CONTACT_CHARU_ART_WEBSITE").encode("utf-8")).decode('utf-8')
-EMAIL_PORT = Fernet(key).decrypt(os.environ.get("EMAIL_PORT").encode("utf-8")).decode('utf-8')
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = f"{Fernet(key).decrypt(os.environ.get("DEFAULT_FROM_EMAIL").encode("utf-8")).decode('utf-8')} {EMAIL_HOST_USER}"
-ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
