@@ -21,7 +21,7 @@ body {
     width: 100%;
     max-width: 80px;
     height: auto;
-  }
+}
 
 .navbar-brand img {
     max-width: 80px; /* Adjust the size as needed */
@@ -42,3 +42,19 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    .shift-text {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  
+  @media (min-width: 769px) {
+    .shift-text {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+  }
+
+  
