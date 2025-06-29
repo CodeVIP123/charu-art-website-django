@@ -35,7 +35,7 @@ SECRET_KEY = Fernet(key).decrypt(os.environ.get("DJANGO_KEY_FOR_CHARU_ART_WEBSIT
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['charucanvasartwebsite.onrender.com', 'charucanvasartwebsite.com', 'www.charucanvasartwebsite.com']
+ALLOWED_HOSTS = ['charucanvasartwebsite.onrender.com', 'charucanvasartwebsite.com', 'www.charucanvasartwebsite.com', 'www.charucanvas.com', 'charucanvas.com']
 
 
 # Application definition
