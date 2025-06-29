@@ -33,7 +33,7 @@ if dot_env_path.exists():
 SECRET_KEY = Fernet(key).decrypt(os.environ.get("DJANGO_KEY_FOR_CHARU_ART_WEBSITE").encode("utf-8")).decode('utf-8')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['charucanvasartwebsite.onrender.com', 'charucanvasartwebsite.com', 'www.charucanvasartwebsite.com']
 
