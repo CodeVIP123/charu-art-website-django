@@ -36,12 +36,14 @@ def about(request):
     # Iterate through the static directory to find files starting with 'review'
     for file in os.listdir(settings.STATICFILES_DIRS[0]):
         if file.startswith("review"):
-            reviews.append(file)  # Add the file name to the images list
+            reviews.append(file)  # Add the file name to the reviews list
 
-    for file in os.listdir(f"{settings.STATICFILES_DIRS[0]}/About_Us/"):
-        images.append(file)  # Add the file name to the images list
+    about_us_path = os.path.join(settings.STATICFILES_DIRS[0], "About_Us")
+    for file in os.listdir(about_us_path):
+        if os.path.isfile(os.path.join(about_us_path, file)):
+            images.append(file)  # Add only the file name to the images list
 
-    # Add the images list to the context
+    # Add the reviews and images lists to the context
     context['reviews'] = reviews
     context['images'] = images
     return render(request, 'about.html', context=context)
@@ -173,3 +175,5 @@ def robots(request):
     """
     content = render_to_string("robots.txt")
     return HttpResponse(content, content_type="text/plain")
+
+
