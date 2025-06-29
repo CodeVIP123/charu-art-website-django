@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}
 About Teacher
 {% endblock title %}
@@ -26,7 +26,7 @@ About Teacher
             A strong focus of Charu’s journey has been to empower homemakers who lost touch with their passions in the busyness of life. Many of Charu’s students have now started their own art classes, carrying forward the creative spark.</b>
     </div>
     <div class="col-md-6 text-center">
-        <img src="{% load static %} {% static "charu_image.jpeg" %}" alt="Teacher Image" class="img-fluid rounded-circle mx-auto d-block">
+        <img src=" {% static "charu_image.jpeg" %}" alt="Teacher Image" class="img-fluid rounded-circle mx-auto d-block">
     </div>
 </div>
 <div class="container mt-5 my-3">

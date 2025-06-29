@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}
 Contact Us
 {% endblock title %}
@@ -33,13 +33,13 @@ Contact Us
             <h3>Follow Us On</h3>
             <div class="d-flex justify-content-center mt-3">
                 <a href="https://www.instagram.com/charu.keserwani/" target="_blank" class="mx-3">
-                    <img src="{% load static %}{% static "contact_us_insta.jpeg" %}" alt="Instagram" style="width: 40px; height: 40px;">
+                    <img src="{% static "contact_us_insta.jpeg" %}" alt="Instagram" style="width: 40px; height: 40px;">
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=100070688926803" target="_blank" class="mx-3">
-                    <img src="{% load static %}{% static "contact-us-fb.png" %}" alt="Facebook" style="width: 40px; height: 40px;">
+                    <img src="{% static "contact-us-fb.png" %}" alt="Facebook" style="width: 40px; height: 40px;">
                 </a>
                 <a href="https://www.linkedin.com/in/charu-keserwani-270077190/" target="_blank" class="mx-3">
-                    <img src="{% load static %}{% static "contact-us-linkedin.png" %}" alt="LinkedIn" style="width: 40px; height: 40px;">
+                    <img src="{% static "contact-us-linkedin.png" %}" alt="LinkedIn" style="width: 40px; height: 40px;">
                 </a>
             </div>
         </div>
