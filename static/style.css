@@ -1,14 +1,60 @@
-body{
-    background-image: url("./background.png");
+body {
+    background-color: white;
     background-size: cover;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll; /* changed from fixed */
+    margin: 0;
+    padding: 0;
 }
 
-.shift-text
-{
-    padding-left: 20cm;
+/* Make the text shift responsive */
+.shift-text {
+    padding-left: 5%;
+    padding-right: 5%;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
+/* Optional - Responsive image in nav */
+.logo-img {
+    width: 100%;
+    max-width: 80px;
+    height: auto;
+}
 
+.navbar-brand img {
+    max-width: 80px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+    .shift-text {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+
+    .navbar-brand img {
+        max-width: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .shift-text {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  
+  @media (min-width: 769px) {
+    .shift-text {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+  }
+
+  
